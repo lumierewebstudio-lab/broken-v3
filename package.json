@@ -1,0 +1,14 @@
+{
+  "name": "broken-v3",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "ƁƦƠҠЄƝ — digital experiences, creative work and experiments.",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "check": "wrangler deploy --dry-run"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
