@@ -1110,3 +1110,2066 @@ img {
     transition-duration: 0.01ms !important;
   }
 }
+/* =========================================================
+   ƁƦƠҠЄƝ — CINEMATIC MOTION LAYER
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   PAGE TRANSITION
+   --------------------------------------------------------- */
+
+body {
+  opacity: 1;
+  transition:
+    background-color 700ms ease,
+    color 700ms ease;
+}
+
+body.page-ready {
+  opacity: 1;
+}
+
+
+/* ---------------------------------------------------------
+   LOADER EXIT
+   --------------------------------------------------------- */
+
+#site-loader {
+  transition:
+    opacity 700ms var(--ease),
+    visibility 700ms var(--ease);
+}
+
+#site-loader.is-finished {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+#site-loader .loader-mark {
+  transition:
+    transform 800ms var(--ease),
+    opacity 500ms ease;
+}
+
+#site-loader.is-finished .loader-mark {
+  transform: translateY(-24px);
+  opacity: 0;
+}
+
+#site-loader .loader-line {
+  transform-origin: left center;
+}
+
+
+/* ---------------------------------------------------------
+   HEADER SCROLL STATE
+   --------------------------------------------------------- */
+
+.site-header {
+  transition:
+    padding 500ms var(--ease),
+    background-color 500ms ease,
+    border-color 500ms ease,
+    backdrop-filter 500ms ease;
+}
+
+body.has-scrolled .site-header {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  background: rgba(7, 7, 7, 0.72);
+  border-bottom-color: var(--line-soft);
+  backdrop-filter: blur(18px);
+}
+
+
+/* ---------------------------------------------------------
+   REVEAL ON SCROLL
+   --------------------------------------------------------- */
+
+.motion-reveal {
+  opacity: 0;
+  transform:
+    translate3d(0, 42px, 0)
+    scale(0.985);
+
+  transition:
+    opacity 900ms var(--ease),
+    transform 1000ms var(--ease);
+
+  transition-delay: var(--motion-delay, 0ms);
+}
+
+.motion-reveal.is-visible {
+  opacity: 1;
+  transform:
+    translate3d(0, 0, 0)
+    scale(1);
+}
+
+
+/* ---------------------------------------------------------
+   HERO MOTION
+   --------------------------------------------------------- */
+
+.hero-content {
+  will-change: transform;
+  transition:
+    opacity 900ms var(--ease);
+}
+
+.hero-title {
+  will-change: transform;
+}
+
+.hero-title span {
+  display: block;
+  will-change: transform;
+}
+
+.hero-title span:nth-child(1) {
+  animation:
+    hero-line-in 1100ms var(--ease) 350ms both;
+}
+
+.hero-title span:nth-child(2) {
+  animation:
+    hero-line-in 1100ms var(--ease) 450ms both;
+}
+
+.hero-title span:nth-child(3) {
+  animation:
+    hero-line-in 1100ms var(--ease) 550ms both;
+}
+
+@keyframes hero-line-in {
+  from {
+    opacity: 0;
+    transform:
+      translate3d(0, 70px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translate3d(0, 0, 0);
+  }
+}
+
+
+/* ---------------------------------------------------------
+   HERO META
+   --------------------------------------------------------- */
+
+.hero-meta span {
+  animation:
+    meta-in 900ms var(--ease) both;
+}
+
+.hero-meta span:nth-child(2) {
+  animation-delay: 140ms;
+}
+
+@keyframes meta-in {
+  from {
+    opacity: 0;
+    transform: translateY(-14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ---------------------------------------------------------
+   HERO DESCRIPTION
+   --------------------------------------------------------- */
+
+.hero-description {
+  animation:
+    description-in 900ms var(--ease) 850ms both;
+}
+
+.hero-link {
+  animation:
+    description-in 900ms var(--ease) 950ms both;
+}
+
+@keyframes description-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ---------------------------------------------------------
+   HERO NUMBER
+   --------------------------------------------------------- */
+
+.hero-number {
+  will-change: transform;
+  transition:
+    opacity 700ms ease;
+}
+
+
+/* ---------------------------------------------------------
+   INTERACTIVE LINKS
+   --------------------------------------------------------- */
+
+.hero-link,
+.contact-button,
+.work-arrow {
+  will-change: transform;
+}
+
+
+/* ---------------------------------------------------------
+   WORK ITEMS
+   --------------------------------------------------------- */
+
+.work-item {
+  transition:
+    transform 900ms var(--ease);
+}
+
+.work-item:hover {
+  transform:
+    translateY(-8px);
+}
+
+.work-item .work-image-placeholder {
+  transition:
+    transform 900ms var(--ease),
+    background-color 700ms ease,
+    border-color 700ms ease;
+  overflow: hidden;
+}
+
+.work-item:hover .work-image-placeholder {
+  transform:
+    scale(0.985);
+  background: var(--acid-soft);
+  border-color: rgba(215, 255, 69, 0.32);
+}
+
+.work-item .work-image-placeholder span {
+  transition:
+    transform 900ms var(--ease),
+    color 500ms ease;
+}
+
+.work-item:hover .work-image-placeholder span {
+  transform:
+    scale(1.08)
+    rotate(-2deg);
+
+  color: var(--acid);
+}
+
+
+/* ---------------------------------------------------------
+   WORK INFORMATION
+   --------------------------------------------------------- */
+
+.work-info {
+  transition:
+    border-color 500ms ease;
+}
+
+.work-item:hover .work-info {
+  border-color:
+    rgba(215, 255, 69, 0.35);
+}
+
+.work-arrow {
+  transition:
+    transform 500ms var(--ease),
+    color 500ms ease;
+}
+
+.work-item:hover .work-arrow {
+  color: var(--acid);
+  transform:
+    translate(5px, -5px);
+}
+
+
+/* ---------------------------------------------------------
+   CAPABILITIES
+   --------------------------------------------------------- */
+
+.capability {
+  transition:
+    transform 700ms var(--ease),
+    border-color 500ms ease;
+}
+
+.capability:hover {
+  transform:
+    translateX(10px);
+  border-color:
+    rgba(215, 255, 69, 0.3);
+}
+
+.capability h3 {
+  transition:
+    color 400ms ease;
+}
+
+.capability:hover h3 {
+  color: var(--acid);
+}
+
+
+/* ---------------------------------------------------------
+   MANIFESTO
+   --------------------------------------------------------- */
+
+.manifesto-section h2 span {
+  display: inline-block;
+  transition:
+    color 500ms ease,
+    transform 700ms var(--ease);
+}
+
+.manifesto-section h2:hover span {
+  color: var(--acid);
+  transform:
+    translateX(12px);
+}
+
+
+/* ---------------------------------------------------------
+   GLITCH DETAIL
+   --------------------------------------------------------- */
+
+.is-glitching {
+  animation:
+    cinematic-glitch 420ms steps(2, end);
+}
+
+@keyframes cinematic-glitch {
+  0% {
+    transform: translate(0);
+    text-shadow: none;
+  }
+
+  20% {
+    transform: translate(-3px, 1px);
+    text-shadow:
+      3px 0 var(--acid);
+  }
+
+  40% {
+    transform: translate(3px, -1px);
+    text-shadow:
+      -3px 0 var(--white);
+  }
+
+  60% {
+    transform: translate(-2px, 0);
+    text-shadow:
+      2px 0 var(--acid);
+  }
+
+  80% {
+    transform: translate(2px, 1px);
+    text-shadow: none;
+  }
+
+  100% {
+    transform: translate(0);
+    text-shadow: none;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   CONTACT BUTTON
+   --------------------------------------------------------- */
+
+.contact-button {
+  transition:
+    background-color 500ms ease,
+    color 500ms ease,
+    border-color 500ms ease,
+    transform 500ms var(--ease);
+}
+
+.contact-button:hover {
+  background: var(--acid);
+  color: var(--black);
+  border-color: var(--acid);
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE NAV MOTION
+   --------------------------------------------------------- */
+
+.main-navigation {
+  transition:
+    opacity 450ms var(--ease),
+    visibility 450ms ease,
+    transform 650ms var(--ease);
+}
+
+.main-navigation a {
+  transition:
+    color 300ms ease,
+    transform 500ms var(--ease);
+}
+
+.main-navigation a:hover {
+  color: var(--acid);
+  transform: translateX(7px);
+}
+
+
+/* ---------------------------------------------------------
+   SUBTLE ACID PULSE
+   --------------------------------------------------------- */
+
+.hero-title-outline {
+  position: relative;
+}
+
+.hero-title-outline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 4%;
+  height: 1px;
+  background: var(--acid);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition:
+    transform 900ms var(--ease);
+}
+
+.hero-title-outline:hover::after {
+  transform: scaleX(1);
+}
+
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .motion-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   SMALL-SCREEN SAFETY
+   --------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+  .motion-reveal {
+    transform:
+      translate3d(0, 24px, 0);
+  }
+
+  .motion-reveal.is-visible {
+    transform:
+      translate3d(0, 0, 0);
+  }
+
+  .capability:hover {
+    transform: none;
+  }
+
+  .work-item:hover {
+    transform: none;
+  }
+
+  .manifesto-section h2:hover span {
+    transform: none;
+  }
+}
+xx
+/* =========================================================
+   ƁƦƠҠЄƝ — ATMOSPHERIC CINEMATIC LAYER
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   GLOBAL GRAIN
+   --------------------------------------------------------- */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: -50%;
+  z-index: 9998;
+  pointer-events: none;
+
+  opacity: 0.055;
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+
+  animation:
+    grain-shift 0.35s steps(2) infinite;
+}
+
+@keyframes grain-shift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  25% {
+    transform: translate3d(2%, -1%, 0);
+  }
+
+  50% {
+    transform: translate3d(-1%, 2%, 0);
+  }
+
+  75% {
+    transform: translate3d(1%, 1%, 0);
+  }
+
+  100% {
+    transform: translate3d(-2%, -1%, 0);
+  }
+}
+
+
+/* ---------------------------------------------------------
+   AMBIENT HERO LIGHT
+   --------------------------------------------------------- */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+
+  width: min(70vw, 900px);
+  height: min(70vw, 900px);
+
+  right: -28%;
+  top: -35%;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(215, 255, 69, 0.095) 0%,
+      rgba(215, 255, 69, 0.035) 28%,
+      transparent 68%
+    );
+
+  filter: blur(12px);
+
+  z-index: -1;
+
+  animation:
+    ambient-drift 12s ease-in-out infinite alternate;
+}
+
+@keyframes ambient-drift {
+  from {
+    transform:
+      translate3d(-4%, 2%, 0)
+      scale(0.96);
+  }
+
+  to {
+    transform:
+      translate3d(5%, -4%, 0)
+      scale(1.06);
+  }
+}
+
+
+/* ---------------------------------------------------------
+   HERO ORBIT
+   --------------------------------------------------------- */
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: clamp(260px, 38vw, 620px);
+  height: clamp(260px, 38vw, 620px);
+
+  right: clamp(-240px, -14vw, -90px);
+  bottom: clamp(-240px, -18vw, -120px);
+
+  border: 1px solid rgba(215, 255, 69, 0.16);
+
+  border-radius: 50%;
+
+  z-index: -1;
+
+  animation:
+    orbit-float 16s ease-in-out infinite alternate;
+}
+
+@keyframes orbit-float {
+  from {
+    transform:
+      rotate(-8deg)
+      scale(0.96);
+  }
+
+  to {
+    transform:
+      rotate(8deg)
+      scale(1.04);
+  }
+}
+
+
+/* ---------------------------------------------------------
+   ACID CURSOR-LIKE POINT
+   --------------------------------------------------------- */
+
+.hero-number {
+  position: relative;
+}
+
+.hero-number::before {
+  content: "";
+
+  position: absolute;
+
+  width: 7px;
+  height: 7px;
+
+  left: -18px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  border-radius: 50%;
+
+  background: var(--acid);
+
+  box-shadow:
+    0 0 14px rgba(215, 255, 69, 0.55),
+    0 0 30px rgba(215, 255, 69, 0.18);
+
+  animation:
+    pulse-point 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse-point {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform:
+      translateY(-50%)
+      scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform:
+      translateY(-50%)
+      scale(1.15);
+  }
+}
+
+
+/* ---------------------------------------------------------
+   SECTION DIVIDERS
+   --------------------------------------------------------- */
+
+.section-heading {
+  position: relative;
+}
+
+.section-heading::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: -18px;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--line),
+      transparent
+    );
+
+  transform-origin: left;
+
+  transform: scaleX(0.2);
+
+  transition:
+    transform 1000ms var(--ease);
+}
+
+.section-heading.is-visible::after {
+  transform: scaleX(1);
+}
+
+
+/* ---------------------------------------------------------
+   INTRO ATMOSPHERE
+   --------------------------------------------------------- */
+
+.intro-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-section::before {
+  content: "Ɓ";
+
+  position: absolute;
+
+  right: -4vw;
+  top: -22vw;
+
+  font-family: var(--display);
+  font-size: clamp(25rem, 55vw, 60rem);
+  font-weight: 800;
+  line-height: 0.7;
+
+  color: transparent;
+
+  -webkit-text-stroke:
+    1px rgba(243, 241, 235, 0.035);
+
+  pointer-events: none;
+
+  animation:
+    intro-letter-float 14s ease-in-out infinite alternate;
+}
+
+@keyframes intro-letter-float {
+  from {
+    transform:
+      translateY(0)
+      rotate(-3deg);
+  }
+
+  to {
+    transform:
+      translateY(3vw)
+      rotate(2deg);
+  }
+}
+
+
+/* ---------------------------------------------------------
+   WORK CARD LIGHT
+   --------------------------------------------------------- */
+
+.work-image-placeholder {
+  position: relative;
+}
+
+.work-image-placeholder::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent 20%,
+      rgba(215, 255, 69, 0.06) 50%,
+      transparent 80%
+    );
+
+  transform:
+    translateX(-120%);
+
+  transition:
+    transform 1000ms var(--ease);
+}
+
+.work-item:hover
+.work-image-placeholder::after {
+  transform:
+    translateX(120%);
+}
+
+
+/* ---------------------------------------------------------
+   CAPABILITY NUMBERS
+   --------------------------------------------------------- */
+
+.capability > span {
+  transition:
+    color 500ms ease,
+    transform 600ms var(--ease);
+}
+
+.capability:hover > span {
+  color: var(--acid);
+
+  transform:
+    translateX(6px);
+}
+
+
+/* ---------------------------------------------------------
+   CONTACT ATMOSPHERE
+   --------------------------------------------------------- */
+
+.contact-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 50vw;
+  height: 50vw;
+
+  right: -22vw;
+  bottom: -28vw;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(215, 255, 69, 0.12);
+
+  box-shadow:
+    0 0 100px rgba(215, 255, 69, 0.035);
+
+  animation:
+    contact-orbit 18s linear infinite;
+}
+
+@keyframes contact-orbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* ---------------------------------------------------------
+   FOOTER DETAIL
+   --------------------------------------------------------- */
+
+.site-footer {
+  position: relative;
+}
+
+.site-footer::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--acid),
+      rgba(215, 255, 69, 0.12),
+      transparent
+    );
+
+  transform-origin: left;
+
+  animation:
+    footer-line 4s ease-in-out infinite alternate;
+}
+
+@keyframes footer-line {
+  from {
+    transform: scaleX(0.35);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+  body::before,
+  .hero::before,
+  .hero::after,
+  .hero-number::before,
+  .intro-section::before,
+  .contact-section::before,
+  .site-footer::before {
+    animation: none !important;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE ATMOSPHERE
+   --------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+  body::before {
+    opacity: 0.035;
+  }
+
+  .hero::before {
+    width: 120vw;
+    height: 120vw;
+    right: -60vw;
+    top: -35vw;
+  }
+
+  .hero::after {
+    width: 90vw;
+    height: 90vw;
+    right: -45vw;
+    bottom: -30vw;
+  }
+
+  .intro-section::before {
+    font-size: 80vw;
+    right: -18vw;
+    top: -8vw;
+  }
+
+  .contact-section::before {
+    width: 90vw;
+    height: 90vw;
+    right: -55vw;
+    bottom: -45vw;
+  }
+}
+/* =========================================================
+   ƁƦƠҠЄƝ — HOMEPAGE EXPERIENCE POLISH
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   HERO SCROLL INDICATOR
+   --------------------------------------------------------- */
+
+.hero-scroll-indicator {
+  position: absolute;
+  right: var(--page);
+  bottom: 34px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  color: var(--dim);
+
+  writing-mode: vertical-rl;
+
+  opacity: 0;
+  animation:
+    scroll-indicator-in 900ms var(--ease) 1.3s forwards;
+}
+
+.hero-scroll-indicator i {
+  display: block;
+
+  width: 1px;
+  height: 52px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      var(--acid),
+      transparent
+    );
+
+  transform-origin: top;
+
+  animation:
+    scroll-line 2s ease-in-out 2s infinite;
+}
+
+@keyframes scroll-indicator-in {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scroll-line {
+  0%,
+  100% {
+    transform: scaleY(0.35);
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   PHOTOGRAPHY TEASER
+   --------------------------------------------------------- */
+
+.photography-teaser {
+  position: relative;
+  min-height: 85vh;
+
+  padding:
+    clamp(100px, 13vw, 190px)
+    var(--page);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  overflow: hidden;
+
+  border-top: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.photography-teaser::before {
+  content: "";
+
+  position: absolute;
+
+  width: 52vw;
+  height: 52vw;
+
+  left: -24vw;
+  bottom: -30vw;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(215, 255, 69, 0.11);
+
+  box-shadow:
+    0 0 120px rgba(215, 255, 69, 0.025);
+
+  animation:
+    photo-orbit 20s linear infinite;
+}
+
+@keyframes photo-orbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.photography-teaser-content {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.photography-teaser-word {
+  font-family: var(--display);
+
+  font-size:
+    clamp(5rem, 15vw, 15rem);
+
+  line-height: 0.78;
+
+  font-weight: 800;
+  letter-spacing: -0.075em;
+
+  color: var(--white);
+
+  transform-origin: left center;
+}
+
+.photography-teaser-word.outline {
+  color: transparent;
+
+  -webkit-text-stroke:
+    1px rgba(243, 241, 235, 0.55);
+
+  margin-left:
+    clamp(20px, 8vw, 150px);
+
+  transition:
+    color 600ms ease,
+    -webkit-text-stroke-color 600ms ease,
+    transform 900ms var(--ease);
+}
+
+.photography-teaser:hover
+.photography-teaser-word.outline {
+  color: var(--acid);
+
+  -webkit-text-stroke-color:
+    var(--acid);
+
+  transform:
+    translateX(12px);
+}
+
+.photography-teaser-content .hero-link {
+  margin-top:
+    clamp(60px, 9vw, 120px);
+
+  padding-bottom: 12px;
+
+  border-bottom:
+    1px solid var(--line);
+}
+
+
+/* ---------------------------------------------------------
+   TEXT LINK
+   --------------------------------------------------------- */
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 30px;
+
+  color: var(--white);
+
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+
+  text-decoration: none;
+
+  transition:
+    color 400ms ease,
+    gap 500ms var(--ease);
+}
+
+.text-link span {
+  color: var(--acid);
+
+  transition:
+    transform 500ms var(--ease);
+}
+
+.text-link:hover {
+  color: var(--acid);
+  gap: 18px;
+}
+
+.text-link:hover span {
+  transform:
+    translate(3px, -3px);
+}
+
+
+/* ---------------------------------------------------------
+   ABOUT COPY
+   --------------------------------------------------------- */
+
+.about-copy {
+  position: relative;
+}
+
+
+/* ---------------------------------------------------------
+   HERO DESCRIPTION WIDTH
+   --------------------------------------------------------- */
+
+.hero-description {
+  max-width: 520px;
+}
+
+
+/* ---------------------------------------------------------
+   WORK IMAGE PLACEHOLDER DEPTH
+   --------------------------------------------------------- */
+
+.work-image-placeholder {
+  background:
+    radial-gradient(
+      circle at 70% 30%,
+      rgba(215, 255, 69, 0.055),
+      transparent 35%
+    ),
+    var(--panel);
+}
+
+
+/* ---------------------------------------------------------
+   DESKTOP HERO DEPTH
+   --------------------------------------------------------- */
+
+@media (min-width: 1000px) {
+
+  .hero-content {
+    max-width: 1200px;
+  }
+
+  .photography-teaser-content {
+    padding-left: 5vw;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   TABLET
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+  .hero-scroll-indicator {
+    display: none;
+  }
+
+  .photography-teaser {
+    min-height: 70vh;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+  .photography-teaser {
+    min-height: 72vh;
+
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  .photography-teaser-word {
+    font-size:
+      clamp(4.2rem, 20vw, 8rem);
+  }
+
+  .photography-teaser-word.outline {
+    margin-left: 12px;
+  }
+
+  .photography-teaser::before {
+    width: 100vw;
+    height: 100vw;
+
+    left: -55vw;
+    bottom: -40vw;
+  }
+
+  .text-link {
+    font-size: 10px;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   VERY SMALL PHONES
+   --------------------------------------------------------- */
+
+@media (max-width: 390px) {
+
+  .photography-teaser-word {
+    font-size: 18vw;
+  }
+
+  .photography-teaser {
+    min-height: 65vh;
+  }
+}
+/* =========================================================
+   ƁƦƠҠЄƝ — CINEMATIC ENGINE VISUAL LAYER
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   CINEMATIC TEXT
+   --------------------------------------------------------- */
+
+.cinematic-text {
+  position: relative;
+  will-change: transform, opacity, filter;
+  transition:
+    opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 1s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--cinematic-delay, 0ms);
+}
+
+.cinematic-hidden {
+  opacity: 0;
+  transform:
+    translate3d(0, 70px, 0)
+    skewY(3deg);
+  filter: blur(14px);
+}
+
+.cinematic-visible {
+  opacity: 1;
+  transform:
+    translate3d(0, 0, 0)
+    skewY(0);
+  filter: blur(0);
+}
+
+
+/* ---------------------------------------------------------
+   CINEMATIC BACKGROUND WORD
+   --------------------------------------------------------- */
+
+.cinematic-background-word {
+  position: fixed;
+  z-index: -2;
+  left: 0;
+  top: 42%;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+
+  font-family: var(--display);
+  font-size: clamp(7rem, 24vw, 25rem);
+  font-weight: 800;
+  line-height: 0.75;
+  letter-spacing: -0.09em;
+
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(215, 255, 69, 0.075);
+
+  opacity: 0.9;
+
+  transform-origin: center;
+  will-change: transform;
+}
+
+
+/* ---------------------------------------------------------
+   CINEMATIC TAP IMPACT
+   --------------------------------------------------------- */
+
+.cinematic-tap {
+  animation: cinematicTap 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes cinematicTap {
+  0% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+
+  45% {
+    transform: scale(0.96);
+    filter:
+      brightness(1.35)
+      drop-shadow(
+        0 0 22px
+        rgba(215, 255, 69, 0.28)
+      );
+  }
+
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
+
+/* ---------------------------------------------------------
+   CINEMATIC HOVER
+   --------------------------------------------------------- */
+
+.cinematic-hover {
+  animation: cinematicHover 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes cinematicHover {
+  0% {
+    transform: translateX(0);
+  }
+
+  35% {
+    transform: translateX(-5px);
+    text-shadow:
+      5px 0 rgba(215, 255, 69, 0.28);
+  }
+
+  65% {
+    transform: translateX(4px);
+    text-shadow:
+      -4px 0 rgba(215, 255, 69, 0.2);
+  }
+
+  100% {
+    transform: translateX(0);
+    text-shadow: none;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   POINTER ATMOSPHERE
+   --------------------------------------------------------- */
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      420px circle at
+      var(--pointer-x, 50%)
+      var(--pointer-y, 50%),
+      rgba(215, 255, 69, 0.045),
+      transparent 68%
+    );
+
+  opacity: 0.85;
+  transition: opacity 700ms ease;
+}
+
+
+/* ---------------------------------------------------------
+   SCROLL VELOCITY RESPONSE
+   --------------------------------------------------------- */
+
+body {
+  --scroll-progress: 0;
+  --scroll-velocity: 0;
+  --pointer-x: 50%;
+  --pointer-y: 50%;
+}
+
+body::before {
+  transition:
+    opacity 500ms ease,
+    transform 500ms ease;
+}
+
+
+/* ---------------------------------------------------------
+   HERO CINEMATIC EXIT
+   --------------------------------------------------------- */
+
+.hero-title {
+  will-change:
+    transform,
+    opacity,
+    filter;
+}
+
+.hero-title .outline {
+  position: relative;
+}
+
+.hero-title .outline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.08em;
+  width: 100%;
+  height: 2px;
+
+  background: var(--acid);
+
+  transform:
+    scaleX(0)
+    translateX(-20px);
+
+  transform-origin: left center;
+
+  transition:
+    transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.page-ready .hero-title .outline::after {
+  transform:
+    scaleX(1)
+    translateX(0);
+
+  transition-delay: 900ms;
+}
+
+
+/* ---------------------------------------------------------
+   HERO DESCRIPTION
+   --------------------------------------------------------- */
+
+.hero-description {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-description::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 70px;
+  height: 1px;
+
+  background: var(--acid);
+
+  transform-origin: left;
+  transform: scaleX(0);
+
+  transition:
+    transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.page-ready .hero-description::before {
+  transform: scaleX(1);
+  transition-delay: 1100ms;
+}
+
+
+/* ---------------------------------------------------------
+   WORK ITEMS
+   --------------------------------------------------------- */
+
+.work-item {
+  position: relative;
+  transition:
+    transform 700ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 500ms ease;
+}
+
+.work-item:hover {
+  transform:
+    translate3d(0, -10px, 0);
+}
+
+.work-item::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+
+  border: 1px solid
+    rgba(215, 255, 69, 0);
+
+  pointer-events: none;
+
+  transition:
+    border-color 500ms ease,
+    transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.work-item:hover::before {
+  border-color:
+    rgba(215, 255, 69, 0.28);
+
+  transform:
+    scale(1.012);
+}
+
+
+/* ---------------------------------------------------------
+   WORK IMAGE CINEMATIC SWEEP
+   --------------------------------------------------------- */
+
+.work-image,
+.work-visual,
+.project-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.work-image::after,
+.work-visual::after,
+.project-image::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -35%;
+
+  width: 25%;
+  height: 140%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(215, 255, 69, 0.12),
+      transparent
+    );
+
+  transform:
+    skewX(-18deg)
+    translateX(-180%);
+
+  transition:
+    transform 1.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  pointer-events: none;
+}
+
+.work-item:hover .work-image::after,
+.work-item:hover .work-visual::after,
+.project-card:hover .project-image::after {
+  transform:
+    skewX(-18deg)
+    translateX(650%);
+}
+
+
+/* ---------------------------------------------------------
+   SECTION HEADINGS
+   --------------------------------------------------------- */
+
+.section-heading {
+  position: relative;
+}
+
+.section-heading::after {
+  content: "";
+  display: block;
+
+  width: 0;
+  height: 1px;
+
+  margin-top: 20px;
+
+  background: var(--acid);
+
+  transition:
+    width 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cinematic-visible.section-heading::after {
+  width: 90px;
+}
+
+
+/* ---------------------------------------------------------
+   MANIFESTO
+   --------------------------------------------------------- */
+
+.manifesto {
+  position: relative;
+  overflow: hidden;
+}
+
+.manifesto::before {
+  content: "CREATE";
+  position: absolute;
+
+  right: -5vw;
+  bottom: -0.2em;
+
+  font-family: var(--display);
+  font-size: clamp(8rem, 22vw, 22rem);
+  font-weight: 800;
+  line-height: 0.7;
+
+  letter-spacing: -0.09em;
+
+  color: transparent;
+  -webkit-text-stroke:
+    1px rgba(243, 241, 235, 0.045);
+
+  pointer-events: none;
+  user-select: none;
+
+  transform:
+    translateX(
+      calc(var(--scroll-progress) * -100px)
+    );
+
+  transition:
+    transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* ---------------------------------------------------------
+   CAPABILITIES
+   --------------------------------------------------------- */
+
+.capability {
+  position: relative;
+  transition:
+    transform 600ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 400ms ease;
+}
+
+.capability:hover {
+  transform:
+    translateX(12px);
+}
+
+.capability::before {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 2px;
+  height: 0;
+
+  background: var(--acid);
+
+  transition:
+    height 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.capability:hover::before {
+  height: 100%;
+}
+
+
+/* ---------------------------------------------------------
+   LINKS
+   --------------------------------------------------------- */
+
+.hero-link,
+.contact-button,
+.text-link,
+.work-arrow {
+  position: relative;
+  will-change: transform;
+}
+
+.hero-link::after,
+.contact-button::after,
+.text-link::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+
+  width: 100%;
+  height: 1px;
+
+  background: var(--acid);
+
+  transform:
+    scaleX(0);
+
+  transform-origin: right;
+
+  transition:
+    transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-link:hover::after,
+.contact-button:hover::after,
+.text-link:hover::after {
+  transform:
+    scaleX(1);
+
+  transform-origin: left;
+}
+
+
+/* ---------------------------------------------------------
+   NAVIGATION CINEMATIC STATE
+   --------------------------------------------------------- */
+
+.main-navigation a {
+  position: relative;
+  transition:
+    color 350ms ease,
+    transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.main-navigation a:hover {
+  color: var(--acid);
+  transform: translateX(8px);
+}
+
+.main-navigation a::before {
+  content: "";
+
+  position: absolute;
+  left: -18px;
+  top: 50%;
+
+  width: 0;
+  height: 1px;
+
+  background: var(--acid);
+
+  transform: translateY(-50%);
+
+  transition:
+    width 450ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.main-navigation a:hover::before {
+  width: 10px;
+}
+
+
+/* ---------------------------------------------------------
+   CONTACT ORBIT
+   --------------------------------------------------------- */
+
+.contact {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact::before {
+  content: "";
+
+  position: absolute;
+
+  width: min(55vw, 650px);
+  aspect-ratio: 1;
+
+  right: -20%;
+  top: 10%;
+
+  border: 1px solid
+    rgba(215, 255, 69, 0.1);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  animation:
+    cinematicOrbit 16s linear infinite;
+}
+
+.contact::after {
+  content: "";
+
+  position: absolute;
+
+  width: 8px;
+  height: 8px;
+
+  right: 18%;
+  top: 25%;
+
+  border-radius: 50%;
+
+  background: var(--acid);
+
+  box-shadow:
+    0 0 25px
+    rgba(215, 255, 69, 0.65);
+
+  pointer-events: none;
+
+  animation:
+    cinematicPulse 3s ease-in-out infinite;
+}
+
+@keyframes cinematicOrbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cinematicPulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.35);
+  }
+}
+
+
+/* ---------------------------------------------------------
+   PAGE EXIT
+   --------------------------------------------------------- */
+
+body.page-exit {
+  overflow: hidden;
+}
+
+body.page-exit main,
+body.page-exit header,
+body.page-exit footer {
+  animation:
+    cinematicPageExit 420ms
+    cubic-bezier(0.76, 0, 0.24, 1)
+    forwards;
+}
+
+@keyframes cinematicPageExit {
+  from {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(1.025);
+    filter: blur(12px);
+  }
+}
+
+
+/* ---------------------------------------------------------
+   FOOTER
+   --------------------------------------------------------- */
+
+footer {
+  position: relative;
+}
+
+footer::before {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--acid),
+      transparent 45%,
+      rgba(243, 241, 235, 0.12)
+    );
+
+  transform-origin: left;
+  transform:
+    scaleX(
+      calc(
+        0.25 +
+        (var(--scroll-progress) * 0.75)
+      )
+    );
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE CINEMATIC ADJUSTMENTS
+   --------------------------------------------------------- */
+
+@media (max-width: 800px) {
+
+  .cinematic-background-word {
+    top: 38%;
+    font-size: 32vw;
+    opacity: 0.55;
+  }
+
+  .manifesto::before {
+    font-size: 34vw;
+    right: -10vw;
+  }
+
+  .contact::before {
+    width: 85vw;
+    right: -35%;
+  }
+
+  .contact::after {
+    right: 12%;
+  }
+
+  .capability:hover {
+    transform: translateX(5px);
+  }
+
+  .work-item:hover {
+    transform:
+      translate3d(0, -5px, 0);
+  }
+}
+
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .cinematic-background-word {
+    transform: none !important;
+  }
+
+  body.page-exit main,
+  body.page-exit header,
+  body.page-exit footer {
+    animation: none;
+  }
+}
